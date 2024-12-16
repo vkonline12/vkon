@@ -1,0 +1,27 @@
+body {
+  background-color: lightblue;
+}
+.my_card {
+            display: flex;
+            justify-content: space-between;
+
+        }
+.footer{
+    box-shadow: 0 15px 30px 1px grey;
+    background: #0666BB;
+    padding:10px;
+    color:#7b8485;
+    font-size:18px;
+    font-family:Monaco;
+    backdrop-filter: blur(10px);
+
+.navbar{
+    box-shadow: 0 15px 30px 1px grey;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+    text-decoration:none;
+}

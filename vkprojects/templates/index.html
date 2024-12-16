@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<!--    main banner-->
+    <div class="row">
+            <img src="{% static 'img/BUILD YOUR OWN WEBSITES (3).png' %}"height="640px"width="800px">
+    </div>
+<!--    end of banner-->
+<div class="row justify-content-center">
+    <div class="head mt-5 ">
+      <h3>Follow Me to Get The Solution.</h3>
+    </div>
+
+</div>
+<!--    main content-->
+<!--    <div class="col-12 mt-5 mb-5">-->
+<!--     <div class="card border-info mb-5" style="max-width: 1540px;">-->
+<!--    <div class="row g-0">-->
+<!--    <div class="col-md-6">-->
+<!--      <img src="{% static 'img/BUILD YOUR OWN WEBSITES (2).png' %}" class="img-fluid rounded-start" alt="...">-->
+<!--    </div>-->
+<!--    <div class="col-md-6">-->
+<!--      <div class="card-body">-->
+<!--        <h3 class="card-head">Hello sir</h3>-->
+<!--        <p class="content-text"> In the modern world we are always connected to the internet and social media, websites solve problems. Common transactions online are communication, data processing, entertainment, financial transactions, learning etc.<p>-->
+<!--        <p class="content-text">Please email me the correct details of the website you need. This website is a direct transaction between customers. It is a platform to introduce myself. I always choose and look forward to your work. I will give you the full details of our service, which is shown at the bottom of the page.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--    </div>-->
+<!--    end of the content-->
+
+
+<!--    content-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="container">
+	<div class="product-details">
+	<h1>HELLO SIR</h1>
+
+<p class="information lead">" In the modern world we are always connected to the internet and social media, websites solve problems. Common transactions online are communication, data processing, entertainment, financial transactions, learning etc. Please email me the correct details of the website you need. This website is a direct transaction between customers. It is a platform to introduce myself. I always choose and look forward to your work. I will give you the full details of our service, which is shown at the bottom of the page.</p>
+<div class="control">
+	<button class="btn">
+	 <span class="price">-></span>
+   <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+        <a href="{% url 'vkapp:add' %}"><span class="buy">Inquiry</span></a>
+ </button>
+</div>
+</div>
+<div class="product-image">
+	<img src="{% static 'img/computer.jpg' %}" alt="">
+<div class="info">
+	<h2> Description</h2>
+	<ul>
+		<li><strong>Mode of Working : </strong>customer registration then contact </li>
+		<li><strong>Facebook id : </strong>bipinvazhakkal</li>
+		<li><strong>Instagram: </strong>bipinvazhakkal</li>
+		<li><strong>Email: </strong>bipinvazhakkal91@gmail.com</li>
+	</ul>
+</div>
+</div>
+</div>
+<!--    content-->
+
+</div>
+
+<!--    new card-->
+    <div class="container">
+    <div class="row">
+        {% for i in myworks %}
+    <div class="col-md-4 mt-4 mycard">
+        <div class="card" style="width: 18rem;">
+            <a class="my-link" href="{% url 'vkapp:spef_det' i.id %}">
+            <img src="{{i.imge.url}}" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <h4 class="card-title">{{i.title_of_site}}</h4>
+                    <h6 class="card-text">{{i.date}}</h6>
+            </div>
+        </div>
+    </div>
+     {% endfor %}
+    </div>
+    </div>
+
+<!--    end of card-->
+
+{% endblock %}

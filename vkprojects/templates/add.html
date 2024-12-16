@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <img src="{% static 'img/add_banner.png' %}"height="700px"width="1300px">
+  </div>
+</div>
+
+<div class="container">
+  <div class="row-md-5">
+    <div class="col-md-4 mt-4 form-control">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input class="form-control" type="text"name="name"placeholder="Type your name"><br>
+    <input class="form-control" type="email"name="email"placeholder="Email"><br>
+    <input class="form-control" type="text" name="contact"placeholder="Contact"><br>
+    <input class="form-control" type="text"name="address"placeholder="Address"><br>
+    <input class="form-control" type="text"name="type_of_website"placeholder="type_of_website_you_want"><br>
+    <input class="form-control" type="datetime-local"name="date"placeholder="Date"><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
